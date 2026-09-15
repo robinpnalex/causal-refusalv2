@@ -1,0 +1,16 @@
+# Causal-refusal smoke test dependencies.
+# Install on the RTX 3070 machine. torch is intentionally NOT pinned here --
+# install it first, matched to your CUDA version, from https://pytorch.org.
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+
+transformers>=4.42        # >=4.42 required: earlier versions lack Gemma-2 support
+accelerate>=0.30          # device_map / low_cpu_mem_usage during from_pretrained
+huggingface_hub>=0.23     # `hf auth login`, gated-repo access
+datasets>=2.19            # JBB / AdvBench / Alpaca loading
+numpy>=1.24
+
+# Notebook runtime (skip if you already have JupyterLab)
+jupyterlab>=4.0
+ipykernel>=6.29

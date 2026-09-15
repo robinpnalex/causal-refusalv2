@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+results/
+.ipynb_checkpoints/
+
+# Local working notes, not part of the experiment
+prompt.md
